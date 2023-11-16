@@ -25,11 +25,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbComprobar" min="-2" pref="186" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="lbPrimo" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -40,18 +35,34 @@
                               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               <Component id="lbSubTitulo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="txtNum" min="-2" pref="111" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btComprobar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNum" min="-2" pref="111" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="133" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbComprobar" alignment="0" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lbLista" min="-2" pref="171" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="lbSumaP" min="-2" pref="157" max="-2" attributes="0"/>
+                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="lbPrimo" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
-              <Component id="btComprobar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,14 +76,19 @@
                   <Component id="txtNum" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lbSubTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="btComprobar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lbPrimo" pref="81" max="32767" attributes="0"/>
+                  <Component id="lbComprobar" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbComprobar" min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="lbPrimo" min="-2" pref="81" max="-2" attributes="0"/>
+                  <Component id="lbSumaP" pref="170" max="32767" attributes="0"/>
+                  <Component id="lbLista" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="48" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,6 +120,10 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPrimo">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbLista">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbSumaP">
     </Component>
   </SubComponents>
 </Form>

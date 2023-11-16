@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import static java.util.stream.IntStream.range;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -31,6 +35,8 @@ public class Operaciones extends javax.swing.JFrame {
         lbComprobar = new javax.swing.JLabel();
         lbTitulo = new javax.swing.JLabel();
         lbPrimo = new javax.swing.JLabel();
+        lbLista = new javax.swing.JLabel();
+        lbSumaP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,10 +64,6 @@ public class Operaciones extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbComprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(lbPrimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(106, 106, 106)
@@ -70,13 +72,24 @@ public class Operaciones extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addComponent(lbSubTitulo)
                                 .addGap(26, 26, 26)
-                                .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 133, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btComprobar)
+                                    .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbComprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbLista, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lbSumaP, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
+                            .addComponent(lbPrimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(btComprobar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,13 +100,17 @@ public class Operaciones extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbSubTitulo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btComprobar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbPrimo, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                    .addComponent(lbComprobar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbComprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPrimo, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(lbSumaP, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(lbLista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -101,31 +118,78 @@ public class Operaciones extends javax.swing.JFrame {
 
     private void btComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btComprobarActionPerformed
         // TODO add your handling code here:
+        //perfecto
         int numero=Integer.parseInt(txtNum.getText());
         int suma=0;
-        int comprobar=0;
+        int i=0;
         
-        for (int i = 1; i==numero; i++) {
+        for (i = 1; i==numero; i++) {
             if(numero % i ==0){
-                comprobar=suma+i;
+                suma+=i;
             }
-            if(comprobar==numero){
+            if(suma==numero){
                 lbComprobar.setText("El Numero Es Perfecto");
+                lbComprobar.setBackground(Color.GREEN);
             }else{
                 lbComprobar.setText("El Numero No Es Perfecto");
+                lbComprobar.setBackground(Color.RED);
             }
         }
-       if (numero == 0 || numero == 1 || numero == 4) {
-           lbPrimo.setText("No es Primo");
+        //primo
+        boolean primo=false;
+        int numPrimo=Integer.parseInt(txtNum.getText());
+        if(numero<2){
+            lbPrimo.setText("No es primo");
+            lbPrimo.setBackground(Color.red);
+        } else{
+            primo=true;
         }
-       for (int x = 2; x < numero / 2; x++) {
-
-       if (numero % x == 0){
-        lbPrimo.setText("No es Primo");
+         for (i = 2; i < numPrimo; i++){ 
+         
+                 if (numPrimo % i == 0){
+                     primo=false;
+       }
+          }
+       if (primo){
+        lbPrimo.setText("Es Primo");
+        lbPrimo.setBackground(Color.GREEN);
+        
+    }else{
+           lbPrimo.setText("No es Primo");
+           lbPrimo.setBackground(Color.red); 
+       //imprimir los numeros primos del numero ingresado la raiz de la suma
+        for (int a = 1; a <= numPrimo; a++) {
+            if(numero==1){
+                
+            }else{
+                
+            }
+           }
+        }
+       //lista de numeros primo
+      int numListap=Integer.parseInt(txtNum.getText());
+       int contador = 2;
+       boolean lisprimo=true;
+       int sumaPrimos=0;
+       double raiz;
+       StringBuilder listaPrimos = new StringBuilder("La lista es: ");
+       while (contador <= numListap) {// Reiniciamos el estado de primo para cada número
+           lisprimo = true; 
+          for ( i = 2; i * i <= contador; i++) {
+        if (contador % i == 0) {
+            lisprimo = false;
+            }
+        if (lisprimo) { // Si es primo, lo agregamos a la lista.
+        listaPrimos.append(contador).append(", ");
+        sumaPrimos += contador;
     }
-       lbPrimo.setText("Es Primo");
-   
-  } 
+    contador++;
+    }
+          raiz=Math.sqrt(sumaPrimos);
+          lbLista.setText(listaPrimos.toString());
+          lbSumaP.setText("La raiz cuadrada de la suma es: "+raiz);
+// Mostramos la lista de primos en el JLabel.
+}
     }//GEN-LAST:event_btComprobarActionPerformed
 
     private void txtNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumActionPerformed
@@ -170,8 +234,10 @@ public class Operaciones extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btComprobar;
     private javax.swing.JLabel lbComprobar;
+    private javax.swing.JLabel lbLista;
     private javax.swing.JLabel lbPrimo;
     private javax.swing.JLabel lbSubTitulo;
+    private javax.swing.JLabel lbSumaP;
     private javax.swing.JLabel lbTitulo;
     private javax.swing.JTextField txtNum;
     // End of variables declaration//GEN-END:variables
