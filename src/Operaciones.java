@@ -121,9 +121,8 @@ public class Operaciones extends javax.swing.JFrame {
         //perfecto
         int numero=Integer.parseInt(txtNum.getText());
         int suma=0;
-        int i=0;
         
-        for (i = 1; i==numero; i++) {
+        for (int i = 1; i==numero; i++) {
             if(numero % i ==0){
                 suma+=i;
             }
@@ -136,19 +135,19 @@ public class Operaciones extends javax.swing.JFrame {
             }
         }
         //primo
-        boolean primo=false;
+        boolean primo=true;
         int numPrimo=Integer.parseInt(txtNum.getText());
         if(numero<2){
+             primo = false;
             lbPrimo.setText("No es primo");
             lbPrimo.setBackground(Color.red);
         } else{
-            primo=true;
-        }
-         for (i = 2; i < numPrimo; i++){ 
-         
-                 if (numPrimo % i == 0){
-                     primo=false;
-       }
+            for (int i = 2; i < numPrimo; i++) {
+                if (numPrimo % i == 0) {
+                    primo = false;
+                    break; // Salir del bucle si se encuentra un divisor
+                     }
+            }
           }
        if (primo){
         lbPrimo.setText("Es Primo");
@@ -158,13 +157,7 @@ public class Operaciones extends javax.swing.JFrame {
            lbPrimo.setText("No es Primo");
            lbPrimo.setBackground(Color.red); 
        //imprimir los numeros primos del numero ingresado la raiz de la suma
-        for (int a = 1; a <= numPrimo; a++) {
-            if(numero==1){
-                
-            }else{
-                
-            }
-           }
+       
         }
        //lista de numeros primo
       int numListap=Integer.parseInt(txtNum.getText());
@@ -175,12 +168,13 @@ public class Operaciones extends javax.swing.JFrame {
        StringBuilder listaPrimos = new StringBuilder("La lista es: ");
        while (contador <= numListap) {// Reiniciamos el estado de primo para cada número
            lisprimo = true; 
-          for ( i = 2; i * i <= contador; i++) {
+          for ( int i = 2; i * i <= contador; i++) {
         if (contador % i == 0) {
             lisprimo = false;
+            break;
             }
         if (lisprimo) { // Si es primo, lo agregamos a la lista.
-        listaPrimos.append(contador).append(", ");
+        listaPrimos.append(contador).append("-");
         sumaPrimos += contador;
     }
     contador++;
@@ -188,7 +182,7 @@ public class Operaciones extends javax.swing.JFrame {
           raiz=Math.sqrt(sumaPrimos);
           lbLista.setText(listaPrimos.toString());
           lbSumaP.setText("La raiz cuadrada de la suma es: "+raiz);
-// Mostramos la lista de primos en el JLabel.
+          // Mostramos la lista de primos en el JLabel.
 }
     }//GEN-LAST:event_btComprobarActionPerformed
 
